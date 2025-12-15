@@ -1,3 +1,16 @@
+enum UserRole {
+  SUPER_ADMIN
+  ADMIN
+  AGENT
+  USER
+}
+
+enum UserStatus {
+  ACTIVE
+  BLOCKED
+}
+
+
 enum PropertyType {
   APARTMENT
   HOUSE
@@ -16,3 +29,5 @@ enum PropertyApprovalStatus {
   APPROVED
   REJECTED
 }
+
+

@@ -1,0 +1,16 @@
+model User {
+  id           String     @id @default(uuid())
+  name         String
+  email        String     @unique
+  password     String
+  role         UserRole   @default(AGENT)
+  profileImage String?
+  isDeleted    Boolean    @default(false)
+  status       UserStatus @default(ACTIVE)
+
+  properties Property[]
+  reviews    Review[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
