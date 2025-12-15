@@ -1,7 +1,6 @@
 # 🩺 Telemedicine Backend
 
-A complete backend for a modern telemedicine platform built with **TypeScript**, **Express.js**, **Prisma**, and **PostgreSQL**.  
-This project includes authentication, doctor & patient management, appointments, payments, AI suggestions, video calls, and more.
+A complete backend for a modern real-state platform built with **TypeScript**, **Express.js**, **Prisma**, and **PostgreSQL**. 
 
 ---
 
@@ -16,41 +15,30 @@ This project includes authentication, doctor & patient management, appointments,
 - Patient health data  
 - Account settings
 
-### 🩺 Doctor Module
-- Doctor profile  
+### Agent Module
+- Agent profile  
 - Specialties  
-- Doctor schedule  
+- Agent schedule  
 - Availability management
 
-### 📅 Appointments
+<!-- ### 📅 Appointments
 - Book, update, cancel appointment  
 - Check doctor availability  
-- Appointment history
+- Appointment history -->
 
 ### ⭐ Reviews
-- Patient can review doctor  
+- Agent can review doctor  
 - Avg rating calculation
 
 ### 💳 Payments (Stripe)
 - Stripe payment intent  
 - Transaction records
 
-### 📞 Video Calling (Agora)
-- Token generation API
 
 ### 🧠 AI Suggestions
-- Doctor recommendation  
-- Smart time suggestion
 
 ### 📊 Dashboard & Analytics
-- Appointments stats  
-- Patients overview  
-- Doctor performance  
 - Revenue analytics
-
-### 📝 Task Scheduling
-- Cron-based auto reminders  
-- Auto cleanup tasks
 
 ---
 
@@ -75,5 +63,5 @@ Follow these steps to run the backend locally.
 ## 1️⃣ Clone the repo
 
 ```bash
-git clone https://github.com/gowaliullah/care-point-server.git
-cd care-point-server
+git clone 
+cd 

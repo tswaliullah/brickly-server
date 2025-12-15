@@ -1,0 +1,18 @@
+enum PropertyType {
+  APARTMENT
+  HOUSE
+  LAND
+}
+
+enum PropertyFor {
+  FOR_SALE
+  FOR_RENT
+  SOLD
+  RENTED
+}
+
+enum PropertyApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}

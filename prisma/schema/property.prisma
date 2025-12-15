@@ -1,0 +1,32 @@
+model Property {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  price       Float
+
+  images           String[]
+  thumbNailImage   String
+
+  type        PropertyType
+  propertyFor PropertyFor
+
+  bedrooms   Int
+  bathrooms  Int
+  squareFoot Int?
+  buildYear  String?
+
+  city            String
+  country         String
+  propertyAddress String
+
+  isFeatured Boolean @default(false)
+  status     PropertyApprovalStatus @default(PENDING)
+
+  userId String
+  user   User @relation(fields: [userId], references: [id])
+
+  reviews Review[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
