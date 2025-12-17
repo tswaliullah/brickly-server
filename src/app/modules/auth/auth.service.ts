@@ -4,6 +4,9 @@ import ApiError from '../../errors/ApiError';
 import bcrypt from 'bcryptjs';
 import { prisma } from '../../shared/prisma';
 import { TRegisterInput } from './auth.interface';
+import { jwtHelperes } from '../../helper/jwtHelper';
+import config from '../../../config';
+import { UserStatus } from '../../../generated/enums';
 
 const login = async (payload: { email: string, password: string }) => {
 
@@ -35,35 +38,38 @@ const login = async (payload: { email: string, password: string }) => {
 }
 
 
-// const refreshToken = async(token: string) => {
 
-//     let decodedData;
-//     try{
-//         decodedData = jwtHelperes.verifyToken(token, config.refresh_token_secret as Secret)
-//     }catch (err) {
-//         throw new Error("You are not authorized!")
-//     }
+const refreshToken = async (token: string) => {
+    let decodedData;
 
-//     const userData = await prisma.user.findUniqueOrThrow({
-//         where: {
-//             email: decodedData.email,
-//             status: UserStatus.ACTIVE
-//         }
-//     });
+    try {
+        decodedData = jwtHelperes.verifyToken(token, config.refresh_token_secret as Secret);
+    } catch (error) {
+        throw new Error("You are not authorized!")
+    }
 
-//     const accessToken = jwtHelperes.generateToken({ 
-//         email: userData.email,
-//         role: userData.role
-//     },
-//     config.access_token_secret as Secret,
-//     config.jwt_expire_in as string
-// );
+    const userData = await prisma.user.findUniqueOrThrow({
+        where: {
+            email: decodedData.email,
+            status: UserStatus.ACTIVE
+        }
+    })
 
-// return {
-//         accessToken,
-//         needPasswordChange: userData.needPasswordChange
-//     }   
-// }
+    const accessToken = jwtHelperes.generateToken({
+        email: userData.email,
+        role: userData.role
+    },
+        config.access_token_secret as string,
+        config.jwt_expire_in as string
+    )
+
+    return {
+        accessToken,
+        needPasswordChange: userData.needPasswordChange
+    }
+}
+
+
 
 
 const getMe = async (session: any) => {
