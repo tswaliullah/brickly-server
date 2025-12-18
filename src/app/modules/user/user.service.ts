@@ -66,19 +66,19 @@ const getAllFromDB = async (params: any, options: any) => {
 
 const getMyProfile = async (user: IJWTPayload) => {
 
-    // const userInfo = await prisma.user.findUniqueOrThrow({
-    //     where: {
-    //         email: user.email,
-    //         status: UserStatus.ACTIVE
-    //     },
-    //     select: {
-    //         id: true,
-    //         email: true,
-    //         needPasswordChange: true,
-    //         role: true,
-    //         status: true
-    //     }
-    // })
+    const userInfo = await prisma.user.findUniqueOrThrow({
+        where: {
+            email: user.email,
+            status: UserStatus.ACTIVE
+        },
+        select: {
+            id: true,
+            email: true,
+            needPasswordChange: true,
+            role: true,
+            status: true
+        }
+    })
 
     // let profileData;
 
@@ -102,7 +102,7 @@ const getMyProfile = async (user: IJWTPayload) => {
     //     })
     // }
 
-    return user;
+    return userInfo;
 }
 
 
