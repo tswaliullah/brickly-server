@@ -21,17 +21,17 @@ const getMyProfile = catchAsync(async (req: Request & { user?: IJWTPayload }, re
     })
 })
 
-const updateMyProfile = catchAsync(async (req: Request, res: Response) => {
+const updateMyProfile = catchAsync(async (req: Request & { user?: IJWTPayload }, res: Response) => {
 
-    // const { id } = req.params;
-    // const result = await UserService.updateMyProfile(id, req.body)
+    const user = req.user;
+    const result = await UserService.updateMyProfile(user as IJWTPayload, req.body)
 
-    // sendResponse(res, {
-    //     statusCode: status.OK,
-    //     success: true,
-    //     message: "Update profile successfully..!",
-    //     data: result
-    // })
+    sendResponse(res, {
+        statusCode: status.OK,
+        success: true,
+        message: "Update profile successfully..!",
+        data: result
+    })
 })
 
 

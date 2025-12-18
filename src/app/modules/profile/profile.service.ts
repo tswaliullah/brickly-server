@@ -1,7 +1,6 @@
 import { prisma } from "../../shared/prisma";
 import { UserStatus } from "../../../generated/client";
 import { IJWTPayload } from "../../types/common";
-import { TProfileUpdate } from "./profile.interface";
 
 
 
@@ -17,7 +16,8 @@ const getMyProfile = async (user: IJWTPayload) => {
             email: true,
             needPasswordChange: true,
             role: true,
-            status: true
+            status: true,
+            profileImage: true
         }
     })
 
@@ -27,17 +27,17 @@ const getMyProfile = async (user: IJWTPayload) => {
 }
 
 
-const updateMyProfile = async (id: string, payload: TProfileUpdate) => {
-    
-    // const updateProfile = await prisma.user.update({
-    //     where: {
-    //         id,
-    //         status: UserStatus.ACTIVE
-    //     },
-    //     data: payload
-    // })
+const updateMyProfile = async (user: IJWTPayload, payload: any) => {
 
-    // return updateProfile
+    const updateProfile = await prisma.user.update({
+        where: {
+            email: user.email,
+            status: UserStatus.ACTIVE
+        },
+        data: payload
+    })
+
+    return updateProfile
 }
 
 
