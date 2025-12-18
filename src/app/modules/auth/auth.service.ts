@@ -7,6 +7,7 @@ import { TLoginInput, TRegisterInput } from './auth.interface';
 import { jwtHelperes } from '../../helper/jwtHelper';
 import config from '../../../config';
 import { UserStatus } from '../../../generated/enums';
+import { User } from '../../../generated/client';
 
 const login = async (payload: TLoginInput) => {
 
@@ -67,32 +68,7 @@ const refreshToken = async (token: string) => {
 
 
 
-
-const getMe = async (session: any) => {
-    const accessToken = session.accessToken;
-    // const decodedData = jwtHelperes.verifyToken(accessToken, config.access_token_secret as Secret);
-
-    // const userData = await prisma.user.findUniqueOrThrow({
-    //     where: {
-    //         email: decodedData.email,
-    //         status: UserStatus.ACTIVE
-    //     }
-    // })
-
-    // const {id, email, role, needPasswordChange, status} = userData;
-
-    // return {
-    //     id,
-    //     email,
-    //     role,
-    //     needPasswordChange,
-    //     status
-    // }
-
-}
-
-
-const Register = async (payload: TRegisterInput) => {
+const Register = async (payload: TRegisterInput): Promise<User> => {
 
     const hashedPassword = await bcrypt.hash(payload.password, 10);
 
@@ -104,7 +80,6 @@ const Register = async (payload: TRegisterInput) => {
         }
     })
 
-    console.log(result);
     return result;
 }
 
@@ -112,6 +87,5 @@ const Register = async (payload: TRegisterInput) => {
 export const AuthService = {
     Register,
     login,
-    // refreshToken,
-    getMe
+    refreshToken
 }
