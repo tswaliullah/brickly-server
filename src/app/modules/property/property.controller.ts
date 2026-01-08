@@ -19,6 +19,20 @@ const createProperty = catchAsync(async (req: Request, res: Response) => {
 })
 
 
+const getAllProperties = catchAsync(async (req: Request, res: Response) => {
+    const result = await PropertyService.getAllProperties();
+
+    sendResponse(res, {
+        statusCode: status.OK,
+        success: true,
+        message: "Properties retrieved successfully",
+        data: result
+    })
+})
+
+
+
 export const PropertyController = {
-   createProperty
+   createProperty,
+    getAllProperties
 }

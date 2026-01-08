@@ -11,7 +11,13 @@ const createProperty = async (payload: any): Promise<any> => {
 }
 
 
+const getAllProperties = async (): Promise<any[]> => {
+    const properties = await prisma.property.findMany();
+    return properties;
+}
+
 
 export const PropertyService = {
-    createProperty
+    createProperty,
+    getAllProperties
 }

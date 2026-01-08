@@ -9,6 +9,11 @@ router.post(
     PropertyController.createProperty
 )
 
+router.get(
+    "/",
+    PropertyController.getAllProperties
+)
+
 
 
 export const propertyRoutes = router;
