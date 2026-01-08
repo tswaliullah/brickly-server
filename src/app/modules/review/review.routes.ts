@@ -19,4 +19,16 @@ router.get(
     ReviewController.getAllReviewsByUserId
 )
 
+
+router.patch(
+    "/:id",
+    ReviewController.updateReview
+)
+
+router.delete(
+    "/:id",
+    ReviewController.deleteReview
+)
+
+
 export const reviewRoutes = router;;
