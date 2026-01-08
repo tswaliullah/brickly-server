@@ -43,8 +43,36 @@ const getAllReviewsByUserId = catchAsync(async (req: Request, res: Response) => 
 })
 
 
+const updateReview = catchAsync(async (req: Request, res: Response) => {
+    const reviewId = req.params.id;
+    const payload = req.body;
+    const updatedReview = await ReviewService.updateReview(reviewId, payload);
+
+    sendResponse(res, {
+        statusCode: status.OK,
+        success: true,
+        message: "Review updated successfully",
+        data: updatedReview
+    })
+})
+
+const deleteReview = catchAsync(async (req: Request, res: Response) => {
+    const reviewId = req.params.id;
+    const deletedReview = await ReviewService.deleteReview(reviewId);
+
+    sendResponse(res, {
+        statusCode: status.OK,
+        success: true,
+        message: "Review deleted successfully",
+        data: deletedReview
+    })
+})
+
+
 export const ReviewController = {
     createReview,
     getAllReviewsByProductId,
-    getAllReviewsByUserId
+    getAllReviewsByUserId,
+    updateReview,
+    deleteReview
 }
