@@ -38,9 +38,19 @@ const updateProperty = async (propertyId: string, payload: any): Promise<any> =>
     return updatedProperty;
 }
 
+
+const deleteProperty = async (propertyId: string): Promise<void> => {
+    await prisma.property.delete({
+        where: {
+            id: propertyId
+        }
+    });
+}   
+
 export const PropertyService = {
     createProperty,
     getAllProperties,
     getSingleProperty,
-    updateProperty
+    updateProperty,
+    deleteProperty
 }
