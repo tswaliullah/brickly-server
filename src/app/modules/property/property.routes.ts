@@ -15,5 +15,10 @@ router.get(
 )
 
 
+router.get(
+    "/:id",
+    PropertyController.getSingleProperty
+)
+
 
 export const propertyRoutes = router;
