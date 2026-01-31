@@ -24,15 +24,17 @@ model User {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("users")
 }
 
 model Property {
-  id              String       @id @default(uuid())
+  id              String          @id @default(uuid())
   title           String
   description     String
-  price           Float
-  images          String[]
+  price           Decimal         @db.Decimal(12, 2)
   thumbNailImage  String
+  propertyImages  PropertyImage[]
   type            PropertyType
   propertyFor     PropertyFor
   bedrooms        Int
@@ -53,11 +55,22 @@ model Property {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("properties")
+}
+
+model PropertyImage {
+  id         String   @id @default(uuid()) 
+  url        String
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id])
+
+  @@map("property_images")
 }
 
 model Review {
   id      String @id @default(uuid())
-  rating  Int?
+  rating  Int    @db.SmallInt
   comment String
 
   userId String
@@ -68,6 +81,8 @@ model Review {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("reviews")
 }
 
 enum UserRole {

@@ -51,6 +51,7 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 export const ModelName = {
   User: 'User',
   Property: 'Property',
+  PropertyImage: 'PropertyImage',
   Review: 'Review'
 } as const
 
@@ -92,7 +93,6 @@ export const PropertyScalarFieldEnum = {
   title: 'title',
   description: 'description',
   price: 'price',
-  images: 'images',
   thumbNailImage: 'thumbNailImage',
   type: 'type',
   propertyFor: 'propertyFor',
@@ -111,6 +111,15 @@ export const PropertyScalarFieldEnum = {
 } as const
 
 export type PropertyScalarFieldEnum = (typeof PropertyScalarFieldEnum)[keyof typeof PropertyScalarFieldEnum]
+
+
+export const PropertyImageScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  propertyId: 'propertyId'
+} as const
+
+export type PropertyImageScalarFieldEnum = (typeof PropertyImageScalarFieldEnum)[keyof typeof PropertyImageScalarFieldEnum]
 
 
 export const ReviewScalarFieldEnum = {

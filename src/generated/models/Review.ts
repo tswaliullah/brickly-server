@@ -193,7 +193,7 @@ export type ReviewGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 
 export type ReviewGroupByOutputType = {
   id: string
-  rating: number | null
+  rating: number
   comment: string
   userId: string
   propertyId: string
@@ -226,7 +226,7 @@ export type ReviewWhereInput = {
   OR?: Prisma.ReviewWhereInput[]
   NOT?: Prisma.ReviewWhereInput | Prisma.ReviewWhereInput[]
   id?: Prisma.StringFilter<"Review"> | string
-  rating?: Prisma.IntNullableFilter<"Review"> | number | null
+  rating?: Prisma.IntFilter<"Review"> | number
   comment?: Prisma.StringFilter<"Review"> | string
   userId?: Prisma.StringFilter<"Review"> | string
   propertyId?: Prisma.StringFilter<"Review"> | string
@@ -238,7 +238,7 @@ export type ReviewWhereInput = {
 
 export type ReviewOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  rating?: Prisma.SortOrderInput | Prisma.SortOrder
+  rating?: Prisma.SortOrder
   comment?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   propertyId?: Prisma.SortOrder
@@ -253,7 +253,7 @@ export type ReviewWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ReviewWhereInput | Prisma.ReviewWhereInput[]
   OR?: Prisma.ReviewWhereInput[]
   NOT?: Prisma.ReviewWhereInput | Prisma.ReviewWhereInput[]
-  rating?: Prisma.IntNullableFilter<"Review"> | number | null
+  rating?: Prisma.IntFilter<"Review"> | number
   comment?: Prisma.StringFilter<"Review"> | string
   userId?: Prisma.StringFilter<"Review"> | string
   propertyId?: Prisma.StringFilter<"Review"> | string
@@ -265,7 +265,7 @@ export type ReviewWhereUniqueInput = Prisma.AtLeast<{
 
 export type ReviewOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  rating?: Prisma.SortOrderInput | Prisma.SortOrder
+  rating?: Prisma.SortOrder
   comment?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   propertyId?: Prisma.SortOrder
@@ -283,7 +283,7 @@ export type ReviewScalarWhereWithAggregatesInput = {
   OR?: Prisma.ReviewScalarWhereWithAggregatesInput[]
   NOT?: Prisma.ReviewScalarWhereWithAggregatesInput | Prisma.ReviewScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Review"> | string
-  rating?: Prisma.IntNullableWithAggregatesFilter<"Review"> | number | null
+  rating?: Prisma.IntWithAggregatesFilter<"Review"> | number
   comment?: Prisma.StringWithAggregatesFilter<"Review"> | string
   userId?: Prisma.StringWithAggregatesFilter<"Review"> | string
   propertyId?: Prisma.StringWithAggregatesFilter<"Review"> | string
@@ -293,7 +293,7 @@ export type ReviewScalarWhereWithAggregatesInput = {
 
 export type ReviewCreateInput = {
   id?: string
-  rating?: number | null
+  rating: number
   comment: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -303,7 +303,7 @@ export type ReviewCreateInput = {
 
 export type ReviewUncheckedCreateInput = {
   id?: string
-  rating?: number | null
+  rating: number
   comment: string
   userId: string
   propertyId: string
@@ -313,7 +313,7 @@ export type ReviewUncheckedCreateInput = {
 
 export type ReviewUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -323,7 +323,7 @@ export type ReviewUpdateInput = {
 
 export type ReviewUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   propertyId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -333,7 +333,7 @@ export type ReviewUncheckedUpdateInput = {
 
 export type ReviewCreateManyInput = {
   id?: string
-  rating?: number | null
+  rating: number
   comment: string
   userId: string
   propertyId: string
@@ -343,7 +343,7 @@ export type ReviewCreateManyInput = {
 
 export type ReviewUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -351,7 +351,7 @@ export type ReviewUpdateManyMutationInput = {
 
 export type ReviewUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   propertyId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -493,7 +493,7 @@ export type ReviewUncheckedUpdateManyWithoutPropertyNestedInput = {
 
 export type ReviewCreateWithoutUserInput = {
   id?: string
-  rating?: number | null
+  rating: number
   comment: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -502,7 +502,7 @@ export type ReviewCreateWithoutUserInput = {
 
 export type ReviewUncheckedCreateWithoutUserInput = {
   id?: string
-  rating?: number | null
+  rating: number
   comment: string
   propertyId: string
   createdAt?: Date | string
@@ -540,7 +540,7 @@ export type ReviewScalarWhereInput = {
   OR?: Prisma.ReviewScalarWhereInput[]
   NOT?: Prisma.ReviewScalarWhereInput | Prisma.ReviewScalarWhereInput[]
   id?: Prisma.StringFilter<"Review"> | string
-  rating?: Prisma.IntNullableFilter<"Review"> | number | null
+  rating?: Prisma.IntFilter<"Review"> | number
   comment?: Prisma.StringFilter<"Review"> | string
   userId?: Prisma.StringFilter<"Review"> | string
   propertyId?: Prisma.StringFilter<"Review"> | string
@@ -550,7 +550,7 @@ export type ReviewScalarWhereInput = {
 
 export type ReviewCreateWithoutPropertyInput = {
   id?: string
-  rating?: number | null
+  rating: number
   comment: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -559,7 +559,7 @@ export type ReviewCreateWithoutPropertyInput = {
 
 export type ReviewUncheckedCreateWithoutPropertyInput = {
   id?: string
-  rating?: number | null
+  rating: number
   comment: string
   userId: string
   createdAt?: Date | string
@@ -594,7 +594,7 @@ export type ReviewUpdateManyWithWhereWithoutPropertyInput = {
 
 export type ReviewCreateManyUserInput = {
   id?: string
-  rating?: number | null
+  rating: number
   comment: string
   propertyId: string
   createdAt?: Date | string
@@ -603,7 +603,7 @@ export type ReviewCreateManyUserInput = {
 
 export type ReviewUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -612,7 +612,7 @@ export type ReviewUpdateWithoutUserInput = {
 
 export type ReviewUncheckedUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.StringFieldUpdateOperationsInput | string
   propertyId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -621,7 +621,7 @@ export type ReviewUncheckedUpdateWithoutUserInput = {
 
 export type ReviewUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.StringFieldUpdateOperationsInput | string
   propertyId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -630,7 +630,7 @@ export type ReviewUncheckedUpdateManyWithoutUserInput = {
 
 export type ReviewCreateManyPropertyInput = {
   id?: string
-  rating?: number | null
+  rating: number
   comment: string
   userId: string
   createdAt?: Date | string
@@ -639,7 +639,7 @@ export type ReviewCreateManyPropertyInput = {
 
 export type ReviewUpdateWithoutPropertyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -648,7 +648,7 @@ export type ReviewUpdateWithoutPropertyInput = {
 
 export type ReviewUncheckedUpdateWithoutPropertyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -657,7 +657,7 @@ export type ReviewUncheckedUpdateWithoutPropertyInput = {
 
 export type ReviewUncheckedUpdateManyWithoutPropertyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  rating?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -734,7 +734,7 @@ export type $ReviewPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    rating: number | null
+    rating: number
     comment: string
     userId: string
     propertyId: string

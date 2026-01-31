@@ -28,6 +28,11 @@ export type User = Prisma.UserModel
  */
 export type Property = Prisma.PropertyModel
 /**
+ * Model PropertyImage
+ * 
+ */
+export type PropertyImage = Prisma.PropertyImageModel
+/**
  * Model Review
  * 
  */

@@ -392,6 +392,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 export const ModelName = {
   User: 'User',
   Property: 'Property',
+  PropertyImage: 'PropertyImage',
   Review: 'Review'
 } as const
 
@@ -408,7 +409,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "property" | "review"
+    modelProps: "user" | "property" | "propertyImage" | "review"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -560,6 +561,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    PropertyImage: {
+      payload: Prisma.$PropertyImagePayload<ExtArgs>
+      fields: Prisma.PropertyImageFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PropertyImageFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PropertyImageFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload>
+        }
+        findFirst: {
+          args: Prisma.PropertyImageFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PropertyImageFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload>
+        }
+        findMany: {
+          args: Prisma.PropertyImageFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload>[]
+        }
+        create: {
+          args: Prisma.PropertyImageCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload>
+        }
+        createMany: {
+          args: Prisma.PropertyImageCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PropertyImageCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload>[]
+        }
+        delete: {
+          args: Prisma.PropertyImageDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload>
+        }
+        update: {
+          args: Prisma.PropertyImageUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload>
+        }
+        deleteMany: {
+          args: Prisma.PropertyImageDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PropertyImageUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PropertyImageUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload>[]
+        }
+        upsert: {
+          args: Prisma.PropertyImageUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PropertyImagePayload>
+        }
+        aggregate: {
+          args: Prisma.PropertyImageAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePropertyImage>
+        }
+        groupBy: {
+          args: Prisma.PropertyImageGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PropertyImageGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PropertyImageCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PropertyImageCountAggregateOutputType> | number
+        }
+      }
+    }
     Review: {
       payload: Prisma.$ReviewPayload<ExtArgs>
       fields: Prisma.ReviewFieldRefs
@@ -695,7 +770,6 @@ export const PropertyScalarFieldEnum = {
   title: 'title',
   description: 'description',
   price: 'price',
-  images: 'images',
   thumbNailImage: 'thumbNailImage',
   type: 'type',
   propertyFor: 'propertyFor',
@@ -714,6 +788,15 @@ export const PropertyScalarFieldEnum = {
 } as const
 
 export type PropertyScalarFieldEnum = (typeof PropertyScalarFieldEnum)[keyof typeof PropertyScalarFieldEnum]
+
+
+export const PropertyImageScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  propertyId: 'propertyId'
+} as const
+
+export type PropertyImageScalarFieldEnum = (typeof PropertyImageScalarFieldEnum)[keyof typeof PropertyImageScalarFieldEnum]
 
 
 export const ReviewScalarFieldEnum = {
@@ -823,16 +906,16 @@ export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaM
 
 
 /**
- * Reference to a field of type 'Float'
+ * Reference to a field of type 'Decimal'
  */
-export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal'>
     
 
 
 /**
- * Reference to a field of type 'Float[]'
+ * Reference to a field of type 'Decimal[]'
  */
-export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+export type ListDecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal[]'>
     
 
 
@@ -889,6 +972,20 @@ export type EnumPropertyApprovalStatusFieldRefInput<$PrismaModel> = FieldRefInpu
  * Reference to a field of type 'PropertyApprovalStatus[]'
  */
 export type ListEnumPropertyApprovalStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PropertyApprovalStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Float'
+ */
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+/**
+ * Reference to a field of type 'Float[]'
+ */
+export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
 
 /**
@@ -980,6 +1077,7 @@ export interface PrismaClientOptions {
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   property?: Prisma.PropertyOmit
+  propertyImage?: Prisma.PropertyImageOmit
   review?: Prisma.ReviewOmit
 }
 
