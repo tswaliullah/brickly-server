@@ -46,6 +46,10 @@ export type PropertyMinAggregateOutputType = {
   description: string | null
   price: runtime.Decimal | null
   thumbNailImage: string | null
+  propertyImages1: string | null
+  propertyImages2: string | null
+  propertyImages3: string | null
+  propertyImages4: string | null
   type: $Enums.PropertyType | null
   propertyFor: $Enums.PropertyFor | null
   bedrooms: number | null
@@ -68,6 +72,10 @@ export type PropertyMaxAggregateOutputType = {
   description: string | null
   price: runtime.Decimal | null
   thumbNailImage: string | null
+  propertyImages1: string | null
+  propertyImages2: string | null
+  propertyImages3: string | null
+  propertyImages4: string | null
   type: $Enums.PropertyType | null
   propertyFor: $Enums.PropertyFor | null
   bedrooms: number | null
@@ -90,6 +98,10 @@ export type PropertyCountAggregateOutputType = {
   description: number
   price: number
   thumbNailImage: number
+  propertyImages1: number
+  propertyImages2: number
+  propertyImages3: number
+  propertyImages4: number
   type: number
   propertyFor: number
   bedrooms: number
@@ -128,6 +140,10 @@ export type PropertyMinAggregateInputType = {
   description?: true
   price?: true
   thumbNailImage?: true
+  propertyImages1?: true
+  propertyImages2?: true
+  propertyImages3?: true
+  propertyImages4?: true
   type?: true
   propertyFor?: true
   bedrooms?: true
@@ -150,6 +166,10 @@ export type PropertyMaxAggregateInputType = {
   description?: true
   price?: true
   thumbNailImage?: true
+  propertyImages1?: true
+  propertyImages2?: true
+  propertyImages3?: true
+  propertyImages4?: true
   type?: true
   propertyFor?: true
   bedrooms?: true
@@ -172,6 +192,10 @@ export type PropertyCountAggregateInputType = {
   description?: true
   price?: true
   thumbNailImage?: true
+  propertyImages1?: true
+  propertyImages2?: true
+  propertyImages3?: true
+  propertyImages4?: true
   type?: true
   propertyFor?: true
   bedrooms?: true
@@ -281,6 +305,10 @@ export type PropertyGroupByOutputType = {
   description: string
   price: runtime.Decimal
   thumbNailImage: string
+  propertyImages1: string
+  propertyImages2: string
+  propertyImages3: string
+  propertyImages4: string | null
   type: $Enums.PropertyType
   propertyFor: $Enums.PropertyFor
   bedrooms: number
@@ -326,6 +354,10 @@ export type PropertyWhereInput = {
   description?: Prisma.StringFilter<"Property"> | string
   price?: Prisma.DecimalFilter<"Property"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFilter<"Property"> | string
+  propertyImages1?: Prisma.StringFilter<"Property"> | string
+  propertyImages2?: Prisma.StringFilter<"Property"> | string
+  propertyImages3?: Prisma.StringFilter<"Property"> | string
+  propertyImages4?: Prisma.StringNullableFilter<"Property"> | string | null
   type?: Prisma.EnumPropertyTypeFilter<"Property"> | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFilter<"Property"> | $Enums.PropertyFor
   bedrooms?: Prisma.IntFilter<"Property"> | number
@@ -340,7 +372,6 @@ export type PropertyWhereInput = {
   userId?: Prisma.StringFilter<"Property"> | string
   createdAt?: Prisma.DateTimeFilter<"Property"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Property"> | Date | string
-  propertyImages?: Prisma.PropertyImageListRelationFilter
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   reviews?: Prisma.ReviewListRelationFilter
 }
@@ -351,6 +382,10 @@ export type PropertyOrderByWithRelationInput = {
   description?: Prisma.SortOrder
   price?: Prisma.SortOrder
   thumbNailImage?: Prisma.SortOrder
+  propertyImages1?: Prisma.SortOrder
+  propertyImages2?: Prisma.SortOrder
+  propertyImages3?: Prisma.SortOrder
+  propertyImages4?: Prisma.SortOrderInput | Prisma.SortOrder
   type?: Prisma.SortOrder
   propertyFor?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
@@ -365,7 +400,6 @@ export type PropertyOrderByWithRelationInput = {
   userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  propertyImages?: Prisma.PropertyImageOrderByRelationAggregateInput
   user?: Prisma.UserOrderByWithRelationInput
   reviews?: Prisma.ReviewOrderByRelationAggregateInput
 }
@@ -379,6 +413,10 @@ export type PropertyWhereUniqueInput = Prisma.AtLeast<{
   description?: Prisma.StringFilter<"Property"> | string
   price?: Prisma.DecimalFilter<"Property"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFilter<"Property"> | string
+  propertyImages1?: Prisma.StringFilter<"Property"> | string
+  propertyImages2?: Prisma.StringFilter<"Property"> | string
+  propertyImages3?: Prisma.StringFilter<"Property"> | string
+  propertyImages4?: Prisma.StringNullableFilter<"Property"> | string | null
   type?: Prisma.EnumPropertyTypeFilter<"Property"> | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFilter<"Property"> | $Enums.PropertyFor
   bedrooms?: Prisma.IntFilter<"Property"> | number
@@ -393,7 +431,6 @@ export type PropertyWhereUniqueInput = Prisma.AtLeast<{
   userId?: Prisma.StringFilter<"Property"> | string
   createdAt?: Prisma.DateTimeFilter<"Property"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Property"> | Date | string
-  propertyImages?: Prisma.PropertyImageListRelationFilter
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   reviews?: Prisma.ReviewListRelationFilter
 }, "id">
@@ -404,6 +441,10 @@ export type PropertyOrderByWithAggregationInput = {
   description?: Prisma.SortOrder
   price?: Prisma.SortOrder
   thumbNailImage?: Prisma.SortOrder
+  propertyImages1?: Prisma.SortOrder
+  propertyImages2?: Prisma.SortOrder
+  propertyImages3?: Prisma.SortOrder
+  propertyImages4?: Prisma.SortOrderInput | Prisma.SortOrder
   type?: Prisma.SortOrder
   propertyFor?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
@@ -434,6 +475,10 @@ export type PropertyScalarWhereWithAggregatesInput = {
   description?: Prisma.StringWithAggregatesFilter<"Property"> | string
   price?: Prisma.DecimalWithAggregatesFilter<"Property"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringWithAggregatesFilter<"Property"> | string
+  propertyImages1?: Prisma.StringWithAggregatesFilter<"Property"> | string
+  propertyImages2?: Prisma.StringWithAggregatesFilter<"Property"> | string
+  propertyImages3?: Prisma.StringWithAggregatesFilter<"Property"> | string
+  propertyImages4?: Prisma.StringNullableWithAggregatesFilter<"Property"> | string | null
   type?: Prisma.EnumPropertyTypeWithAggregatesFilter<"Property"> | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForWithAggregatesFilter<"Property"> | $Enums.PropertyFor
   bedrooms?: Prisma.IntWithAggregatesFilter<"Property"> | number
@@ -456,6 +501,10 @@ export type PropertyCreateInput = {
   description: string
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage: string
+  propertyImages1: string
+  propertyImages2: string
+  propertyImages3: string
+  propertyImages4?: string | null
   type: $Enums.PropertyType
   propertyFor: $Enums.PropertyFor
   bedrooms: number
@@ -469,7 +518,6 @@ export type PropertyCreateInput = {
   status?: $Enums.PropertyApprovalStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  propertyImages?: Prisma.PropertyImageCreateNestedManyWithoutPropertyInput
   user: Prisma.UserCreateNestedOneWithoutPropertiesInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutPropertyInput
 }
@@ -480,6 +528,10 @@ export type PropertyUncheckedCreateInput = {
   description: string
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage: string
+  propertyImages1: string
+  propertyImages2: string
+  propertyImages3: string
+  propertyImages4?: string | null
   type: $Enums.PropertyType
   propertyFor: $Enums.PropertyFor
   bedrooms: number
@@ -494,7 +546,6 @@ export type PropertyUncheckedCreateInput = {
   userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  propertyImages?: Prisma.PropertyImageUncheckedCreateNestedManyWithoutPropertyInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutPropertyInput
 }
 
@@ -504,6 +555,10 @@ export type PropertyUpdateInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages1?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages2?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages3?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages4?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
@@ -517,7 +572,6 @@ export type PropertyUpdateInput = {
   status?: Prisma.EnumPropertyApprovalStatusFieldUpdateOperationsInput | $Enums.PropertyApprovalStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  propertyImages?: Prisma.PropertyImageUpdateManyWithoutPropertyNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPropertiesNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutPropertyNestedInput
 }
@@ -528,6 +582,10 @@ export type PropertyUncheckedUpdateInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages1?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages2?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages3?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages4?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
@@ -542,7 +600,6 @@ export type PropertyUncheckedUpdateInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  propertyImages?: Prisma.PropertyImageUncheckedUpdateManyWithoutPropertyNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutPropertyNestedInput
 }
 
@@ -552,6 +609,10 @@ export type PropertyCreateManyInput = {
   description: string
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage: string
+  propertyImages1: string
+  propertyImages2: string
+  propertyImages3: string
+  propertyImages4?: string | null
   type: $Enums.PropertyType
   propertyFor: $Enums.PropertyFor
   bedrooms: number
@@ -574,6 +635,10 @@ export type PropertyUpdateManyMutationInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages1?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages2?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages3?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages4?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
@@ -595,6 +660,10 @@ export type PropertyUncheckedUpdateManyInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages1?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages2?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages3?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages4?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
@@ -627,6 +696,10 @@ export type PropertyCountOrderByAggregateInput = {
   description?: Prisma.SortOrder
   price?: Prisma.SortOrder
   thumbNailImage?: Prisma.SortOrder
+  propertyImages1?: Prisma.SortOrder
+  propertyImages2?: Prisma.SortOrder
+  propertyImages3?: Prisma.SortOrder
+  propertyImages4?: Prisma.SortOrder
   type?: Prisma.SortOrder
   propertyFor?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
@@ -656,6 +729,10 @@ export type PropertyMaxOrderByAggregateInput = {
   description?: Prisma.SortOrder
   price?: Prisma.SortOrder
   thumbNailImage?: Prisma.SortOrder
+  propertyImages1?: Prisma.SortOrder
+  propertyImages2?: Prisma.SortOrder
+  propertyImages3?: Prisma.SortOrder
+  propertyImages4?: Prisma.SortOrder
   type?: Prisma.SortOrder
   propertyFor?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
@@ -678,6 +755,10 @@ export type PropertyMinOrderByAggregateInput = {
   description?: Prisma.SortOrder
   price?: Prisma.SortOrder
   thumbNailImage?: Prisma.SortOrder
+  propertyImages1?: Prisma.SortOrder
+  propertyImages2?: Prisma.SortOrder
+  propertyImages3?: Prisma.SortOrder
+  propertyImages4?: Prisma.SortOrder
   type?: Prisma.SortOrder
   propertyFor?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
@@ -784,20 +865,6 @@ export type EnumPropertyApprovalStatusFieldUpdateOperationsInput = {
   set?: $Enums.PropertyApprovalStatus
 }
 
-export type PropertyCreateNestedOneWithoutPropertyImagesInput = {
-  create?: Prisma.XOR<Prisma.PropertyCreateWithoutPropertyImagesInput, Prisma.PropertyUncheckedCreateWithoutPropertyImagesInput>
-  connectOrCreate?: Prisma.PropertyCreateOrConnectWithoutPropertyImagesInput
-  connect?: Prisma.PropertyWhereUniqueInput
-}
-
-export type PropertyUpdateOneRequiredWithoutPropertyImagesNestedInput = {
-  create?: Prisma.XOR<Prisma.PropertyCreateWithoutPropertyImagesInput, Prisma.PropertyUncheckedCreateWithoutPropertyImagesInput>
-  connectOrCreate?: Prisma.PropertyCreateOrConnectWithoutPropertyImagesInput
-  upsert?: Prisma.PropertyUpsertWithoutPropertyImagesInput
-  connect?: Prisma.PropertyWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PropertyUpdateToOneWithWhereWithoutPropertyImagesInput, Prisma.PropertyUpdateWithoutPropertyImagesInput>, Prisma.PropertyUncheckedUpdateWithoutPropertyImagesInput>
-}
-
 export type PropertyCreateNestedOneWithoutReviewsInput = {
   create?: Prisma.XOR<Prisma.PropertyCreateWithoutReviewsInput, Prisma.PropertyUncheckedCreateWithoutReviewsInput>
   connectOrCreate?: Prisma.PropertyCreateOrConnectWithoutReviewsInput
@@ -818,6 +885,10 @@ export type PropertyCreateWithoutUserInput = {
   description: string
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage: string
+  propertyImages1: string
+  propertyImages2: string
+  propertyImages3: string
+  propertyImages4?: string | null
   type: $Enums.PropertyType
   propertyFor: $Enums.PropertyFor
   bedrooms: number
@@ -831,7 +902,6 @@ export type PropertyCreateWithoutUserInput = {
   status?: $Enums.PropertyApprovalStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  propertyImages?: Prisma.PropertyImageCreateNestedManyWithoutPropertyInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutPropertyInput
 }
 
@@ -841,6 +911,10 @@ export type PropertyUncheckedCreateWithoutUserInput = {
   description: string
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage: string
+  propertyImages1: string
+  propertyImages2: string
+  propertyImages3: string
+  propertyImages4?: string | null
   type: $Enums.PropertyType
   propertyFor: $Enums.PropertyFor
   bedrooms: number
@@ -854,7 +928,6 @@ export type PropertyUncheckedCreateWithoutUserInput = {
   status?: $Enums.PropertyApprovalStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  propertyImages?: Prisma.PropertyImageUncheckedCreateNestedManyWithoutPropertyInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutPropertyInput
 }
 
@@ -893,6 +966,10 @@ export type PropertyScalarWhereInput = {
   description?: Prisma.StringFilter<"Property"> | string
   price?: Prisma.DecimalFilter<"Property"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFilter<"Property"> | string
+  propertyImages1?: Prisma.StringFilter<"Property"> | string
+  propertyImages2?: Prisma.StringFilter<"Property"> | string
+  propertyImages3?: Prisma.StringFilter<"Property"> | string
+  propertyImages4?: Prisma.StringNullableFilter<"Property"> | string | null
   type?: Prisma.EnumPropertyTypeFilter<"Property"> | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFilter<"Property"> | $Enums.PropertyFor
   bedrooms?: Prisma.IntFilter<"Property"> | number
@@ -909,120 +986,16 @@ export type PropertyScalarWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"Property"> | Date | string
 }
 
-export type PropertyCreateWithoutPropertyImagesInput = {
-  id?: string
-  title: string
-  description: string
-  price: runtime.Decimal | runtime.DecimalJsLike | number | string
-  thumbNailImage: string
-  type: $Enums.PropertyType
-  propertyFor: $Enums.PropertyFor
-  bedrooms: number
-  bathrooms: number
-  squareFoot?: number | null
-  buildYear?: string | null
-  city: string
-  country: string
-  propertyAddress: string
-  isFeatured?: boolean
-  status?: $Enums.PropertyApprovalStatus
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutPropertiesInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutPropertyInput
-}
-
-export type PropertyUncheckedCreateWithoutPropertyImagesInput = {
-  id?: string
-  title: string
-  description: string
-  price: runtime.Decimal | runtime.DecimalJsLike | number | string
-  thumbNailImage: string
-  type: $Enums.PropertyType
-  propertyFor: $Enums.PropertyFor
-  bedrooms: number
-  bathrooms: number
-  squareFoot?: number | null
-  buildYear?: string | null
-  city: string
-  country: string
-  propertyAddress: string
-  isFeatured?: boolean
-  status?: $Enums.PropertyApprovalStatus
-  userId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutPropertyInput
-}
-
-export type PropertyCreateOrConnectWithoutPropertyImagesInput = {
-  where: Prisma.PropertyWhereUniqueInput
-  create: Prisma.XOR<Prisma.PropertyCreateWithoutPropertyImagesInput, Prisma.PropertyUncheckedCreateWithoutPropertyImagesInput>
-}
-
-export type PropertyUpsertWithoutPropertyImagesInput = {
-  update: Prisma.XOR<Prisma.PropertyUpdateWithoutPropertyImagesInput, Prisma.PropertyUncheckedUpdateWithoutPropertyImagesInput>
-  create: Prisma.XOR<Prisma.PropertyCreateWithoutPropertyImagesInput, Prisma.PropertyUncheckedCreateWithoutPropertyImagesInput>
-  where?: Prisma.PropertyWhereInput
-}
-
-export type PropertyUpdateToOneWithWhereWithoutPropertyImagesInput = {
-  where?: Prisma.PropertyWhereInput
-  data: Prisma.XOR<Prisma.PropertyUpdateWithoutPropertyImagesInput, Prisma.PropertyUncheckedUpdateWithoutPropertyImagesInput>
-}
-
-export type PropertyUpdateWithoutPropertyImagesInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  title?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.StringFieldUpdateOperationsInput | string
-  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
-  propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
-  bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
-  bathrooms?: Prisma.IntFieldUpdateOperationsInput | number
-  squareFoot?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  buildYear?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  propertyAddress?: Prisma.StringFieldUpdateOperationsInput | string
-  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  status?: Prisma.EnumPropertyApprovalStatusFieldUpdateOperationsInput | $Enums.PropertyApprovalStatus
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutPropertiesNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutPropertyNestedInput
-}
-
-export type PropertyUncheckedUpdateWithoutPropertyImagesInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  title?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.StringFieldUpdateOperationsInput | string
-  price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
-  type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
-  propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
-  bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
-  bathrooms?: Prisma.IntFieldUpdateOperationsInput | number
-  squareFoot?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  buildYear?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  propertyAddress?: Prisma.StringFieldUpdateOperationsInput | string
-  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  status?: Prisma.EnumPropertyApprovalStatusFieldUpdateOperationsInput | $Enums.PropertyApprovalStatus
-  userId?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutPropertyNestedInput
-}
-
 export type PropertyCreateWithoutReviewsInput = {
   id?: string
   title: string
   description: string
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage: string
+  propertyImages1: string
+  propertyImages2: string
+  propertyImages3: string
+  propertyImages4?: string | null
   type: $Enums.PropertyType
   propertyFor: $Enums.PropertyFor
   bedrooms: number
@@ -1036,7 +1009,6 @@ export type PropertyCreateWithoutReviewsInput = {
   status?: $Enums.PropertyApprovalStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  propertyImages?: Prisma.PropertyImageCreateNestedManyWithoutPropertyInput
   user: Prisma.UserCreateNestedOneWithoutPropertiesInput
 }
 
@@ -1046,6 +1018,10 @@ export type PropertyUncheckedCreateWithoutReviewsInput = {
   description: string
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage: string
+  propertyImages1: string
+  propertyImages2: string
+  propertyImages3: string
+  propertyImages4?: string | null
   type: $Enums.PropertyType
   propertyFor: $Enums.PropertyFor
   bedrooms: number
@@ -1060,7 +1036,6 @@ export type PropertyUncheckedCreateWithoutReviewsInput = {
   userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  propertyImages?: Prisma.PropertyImageUncheckedCreateNestedManyWithoutPropertyInput
 }
 
 export type PropertyCreateOrConnectWithoutReviewsInput = {
@@ -1085,6 +1060,10 @@ export type PropertyUpdateWithoutReviewsInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages1?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages2?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages3?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages4?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1098,7 +1077,6 @@ export type PropertyUpdateWithoutReviewsInput = {
   status?: Prisma.EnumPropertyApprovalStatusFieldUpdateOperationsInput | $Enums.PropertyApprovalStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  propertyImages?: Prisma.PropertyImageUpdateManyWithoutPropertyNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPropertiesNestedInput
 }
 
@@ -1108,6 +1086,10 @@ export type PropertyUncheckedUpdateWithoutReviewsInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages1?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages2?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages3?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages4?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1122,7 +1104,6 @@ export type PropertyUncheckedUpdateWithoutReviewsInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  propertyImages?: Prisma.PropertyImageUncheckedUpdateManyWithoutPropertyNestedInput
 }
 
 export type PropertyCreateManyUserInput = {
@@ -1131,6 +1112,10 @@ export type PropertyCreateManyUserInput = {
   description: string
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage: string
+  propertyImages1: string
+  propertyImages2: string
+  propertyImages3: string
+  propertyImages4?: string | null
   type: $Enums.PropertyType
   propertyFor: $Enums.PropertyFor
   bedrooms: number
@@ -1152,6 +1137,10 @@ export type PropertyUpdateWithoutUserInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages1?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages2?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages3?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages4?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1165,7 +1154,6 @@ export type PropertyUpdateWithoutUserInput = {
   status?: Prisma.EnumPropertyApprovalStatusFieldUpdateOperationsInput | $Enums.PropertyApprovalStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  propertyImages?: Prisma.PropertyImageUpdateManyWithoutPropertyNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutPropertyNestedInput
 }
 
@@ -1175,6 +1163,10 @@ export type PropertyUncheckedUpdateWithoutUserInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages1?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages2?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages3?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages4?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1188,7 +1180,6 @@ export type PropertyUncheckedUpdateWithoutUserInput = {
   status?: Prisma.EnumPropertyApprovalStatusFieldUpdateOperationsInput | $Enums.PropertyApprovalStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  propertyImages?: Prisma.PropertyImageUncheckedUpdateManyWithoutPropertyNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutPropertyNestedInput
 }
 
@@ -1198,6 +1189,10 @@ export type PropertyUncheckedUpdateManyWithoutUserInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   thumbNailImage?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages1?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages2?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages3?: Prisma.StringFieldUpdateOperationsInput | string
+  propertyImages4?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   type?: Prisma.EnumPropertyTypeFieldUpdateOperationsInput | $Enums.PropertyType
   propertyFor?: Prisma.EnumPropertyForFieldUpdateOperationsInput | $Enums.PropertyFor
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1219,12 +1214,10 @@ export type PropertyUncheckedUpdateManyWithoutUserInput = {
  */
 
 export type PropertyCountOutputType = {
-  propertyImages: number
   reviews: number
 }
 
 export type PropertyCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  propertyImages?: boolean | PropertyCountOutputTypeCountPropertyImagesArgs
   reviews?: boolean | PropertyCountOutputTypeCountReviewsArgs
 }
 
@@ -1241,13 +1234,6 @@ export type PropertyCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ext
 /**
  * PropertyCountOutputType without action
  */
-export type PropertyCountOutputTypeCountPropertyImagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PropertyImageWhereInput
-}
-
-/**
- * PropertyCountOutputType without action
- */
 export type PropertyCountOutputTypeCountReviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.ReviewWhereInput
 }
@@ -1259,6 +1245,10 @@ export type PropertySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   description?: boolean
   price?: boolean
   thumbNailImage?: boolean
+  propertyImages1?: boolean
+  propertyImages2?: boolean
+  propertyImages3?: boolean
+  propertyImages4?: boolean
   type?: boolean
   propertyFor?: boolean
   bedrooms?: boolean
@@ -1273,7 +1263,6 @@ export type PropertySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  propertyImages?: boolean | Prisma.Property$propertyImagesArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   reviews?: boolean | Prisma.Property$reviewsArgs<ExtArgs>
   _count?: boolean | Prisma.PropertyCountOutputTypeDefaultArgs<ExtArgs>
@@ -1285,6 +1274,10 @@ export type PropertySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   description?: boolean
   price?: boolean
   thumbNailImage?: boolean
+  propertyImages1?: boolean
+  propertyImages2?: boolean
+  propertyImages3?: boolean
+  propertyImages4?: boolean
   type?: boolean
   propertyFor?: boolean
   bedrooms?: boolean
@@ -1308,6 +1301,10 @@ export type PropertySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   description?: boolean
   price?: boolean
   thumbNailImage?: boolean
+  propertyImages1?: boolean
+  propertyImages2?: boolean
+  propertyImages3?: boolean
+  propertyImages4?: boolean
   type?: boolean
   propertyFor?: boolean
   bedrooms?: boolean
@@ -1331,6 +1328,10 @@ export type PropertySelectScalar = {
   description?: boolean
   price?: boolean
   thumbNailImage?: boolean
+  propertyImages1?: boolean
+  propertyImages2?: boolean
+  propertyImages3?: boolean
+  propertyImages4?: boolean
   type?: boolean
   propertyFor?: boolean
   bedrooms?: boolean
@@ -1347,9 +1348,8 @@ export type PropertySelectScalar = {
   updatedAt?: boolean
 }
 
-export type PropertyOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "price" | "thumbNailImage" | "type" | "propertyFor" | "bedrooms" | "bathrooms" | "squareFoot" | "buildYear" | "city" | "country" | "propertyAddress" | "isFeatured" | "status" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["property"]>
+export type PropertyOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "price" | "thumbNailImage" | "propertyImages1" | "propertyImages2" | "propertyImages3" | "propertyImages4" | "type" | "propertyFor" | "bedrooms" | "bathrooms" | "squareFoot" | "buildYear" | "city" | "country" | "propertyAddress" | "isFeatured" | "status" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["property"]>
 export type PropertyInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  propertyImages?: boolean | Prisma.Property$propertyImagesArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   reviews?: boolean | Prisma.Property$reviewsArgs<ExtArgs>
   _count?: boolean | Prisma.PropertyCountOutputTypeDefaultArgs<ExtArgs>
@@ -1364,7 +1364,6 @@ export type PropertyIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type $PropertyPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Property"
   objects: {
-    propertyImages: Prisma.$PropertyImagePayload<ExtArgs>[]
     user: Prisma.$UserPayload<ExtArgs>
     reviews: Prisma.$ReviewPayload<ExtArgs>[]
   }
@@ -1374,6 +1373,10 @@ export type $PropertyPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     description: string
     price: runtime.Decimal
     thumbNailImage: string
+    propertyImages1: string
+    propertyImages2: string
+    propertyImages3: string
+    propertyImages4: string | null
     type: $Enums.PropertyType
     propertyFor: $Enums.PropertyFor
     bedrooms: number
@@ -1782,7 +1785,6 @@ readonly fields: PropertyFieldRefs;
  */
 export interface Prisma__PropertyClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  propertyImages<T extends Prisma.Property$propertyImagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Property$propertyImagesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PropertyImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   reviews<T extends Prisma.Property$reviewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Property$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
@@ -1819,6 +1821,10 @@ export interface PropertyFieldRefs {
   readonly description: Prisma.FieldRef<"Property", 'String'>
   readonly price: Prisma.FieldRef<"Property", 'Decimal'>
   readonly thumbNailImage: Prisma.FieldRef<"Property", 'String'>
+  readonly propertyImages1: Prisma.FieldRef<"Property", 'String'>
+  readonly propertyImages2: Prisma.FieldRef<"Property", 'String'>
+  readonly propertyImages3: Prisma.FieldRef<"Property", 'String'>
+  readonly propertyImages4: Prisma.FieldRef<"Property", 'String'>
   readonly type: Prisma.FieldRef<"Property", 'PropertyType'>
   readonly propertyFor: Prisma.FieldRef<"Property", 'PropertyFor'>
   readonly bedrooms: Prisma.FieldRef<"Property", 'Int'>
@@ -2226,30 +2232,6 @@ export type PropertyDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inte
    * Limit how many Properties to delete.
    */
   limit?: number
-}
-
-/**
- * Property.propertyImages
- */
-export type Property$propertyImagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the PropertyImage
-   */
-  select?: Prisma.PropertyImageSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the PropertyImage
-   */
-  omit?: Prisma.PropertyImageOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
-  where?: Prisma.PropertyImageWhereInput
-  orderBy?: Prisma.PropertyImageOrderByWithRelationInput | Prisma.PropertyImageOrderByWithRelationInput[]
-  cursor?: Prisma.PropertyImageWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.PropertyImageScalarFieldEnum | Prisma.PropertyImageScalarFieldEnum[]
 }
 
 /**

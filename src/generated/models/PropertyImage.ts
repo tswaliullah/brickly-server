@@ -27,19 +27,16 @@ export type AggregatePropertyImage = {
 export type PropertyImageMinAggregateOutputType = {
   id: string | null
   url: string | null
-  propertyId: string | null
 }
 
 export type PropertyImageMaxAggregateOutputType = {
   id: string | null
   url: string | null
-  propertyId: string | null
 }
 
 export type PropertyImageCountAggregateOutputType = {
   id: number
   url: number
-  propertyId: number
   _all: number
 }
 
@@ -47,19 +44,16 @@ export type PropertyImageCountAggregateOutputType = {
 export type PropertyImageMinAggregateInputType = {
   id?: true
   url?: true
-  propertyId?: true
 }
 
 export type PropertyImageMaxAggregateInputType = {
   id?: true
   url?: true
-  propertyId?: true
 }
 
 export type PropertyImageCountAggregateInputType = {
   id?: true
   url?: true
-  propertyId?: true
   _all?: true
 }
 
@@ -138,7 +132,6 @@ export type PropertyImageGroupByArgs<ExtArgs extends runtime.Types.Extensions.In
 export type PropertyImageGroupByOutputType = {
   id: string
   url: string
-  propertyId: string
   _count: PropertyImageCountAggregateOutputType | null
   _min: PropertyImageMinAggregateOutputType | null
   _max: PropertyImageMaxAggregateOutputType | null
@@ -165,15 +158,11 @@ export type PropertyImageWhereInput = {
   NOT?: Prisma.PropertyImageWhereInput | Prisma.PropertyImageWhereInput[]
   id?: Prisma.StringFilter<"PropertyImage"> | string
   url?: Prisma.StringFilter<"PropertyImage"> | string
-  propertyId?: Prisma.StringFilter<"PropertyImage"> | string
-  property?: Prisma.XOR<Prisma.PropertyScalarRelationFilter, Prisma.PropertyWhereInput>
 }
 
 export type PropertyImageOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   url?: Prisma.SortOrder
-  propertyId?: Prisma.SortOrder
-  property?: Prisma.PropertyOrderByWithRelationInput
 }
 
 export type PropertyImageWhereUniqueInput = Prisma.AtLeast<{
@@ -182,14 +171,11 @@ export type PropertyImageWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.PropertyImageWhereInput[]
   NOT?: Prisma.PropertyImageWhereInput | Prisma.PropertyImageWhereInput[]
   url?: Prisma.StringFilter<"PropertyImage"> | string
-  propertyId?: Prisma.StringFilter<"PropertyImage"> | string
-  property?: Prisma.XOR<Prisma.PropertyScalarRelationFilter, Prisma.PropertyWhereInput>
 }, "id">
 
 export type PropertyImageOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   url?: Prisma.SortOrder
-  propertyId?: Prisma.SortOrder
   _count?: Prisma.PropertyImageCountOrderByAggregateInput
   _max?: Prisma.PropertyImageMaxOrderByAggregateInput
   _min?: Prisma.PropertyImageMinOrderByAggregateInput
@@ -201,37 +187,31 @@ export type PropertyImageScalarWhereWithAggregatesInput = {
   NOT?: Prisma.PropertyImageScalarWhereWithAggregatesInput | Prisma.PropertyImageScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"PropertyImage"> | string
   url?: Prisma.StringWithAggregatesFilter<"PropertyImage"> | string
-  propertyId?: Prisma.StringWithAggregatesFilter<"PropertyImage"> | string
 }
 
 export type PropertyImageCreateInput = {
   id?: string
   url: string
-  property: Prisma.PropertyCreateNestedOneWithoutPropertyImagesInput
 }
 
 export type PropertyImageUncheckedCreateInput = {
   id?: string
   url: string
-  propertyId: string
 }
 
 export type PropertyImageUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
-  property?: Prisma.PropertyUpdateOneRequiredWithoutPropertyImagesNestedInput
 }
 
 export type PropertyImageUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
-  propertyId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PropertyImageCreateManyInput = {
   id?: string
   url: string
-  propertyId: string
 }
 
 export type PropertyImageUpdateManyMutationInput = {
@@ -242,142 +222,21 @@ export type PropertyImageUpdateManyMutationInput = {
 export type PropertyImageUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   url?: Prisma.StringFieldUpdateOperationsInput | string
-  propertyId?: Prisma.StringFieldUpdateOperationsInput | string
-}
-
-export type PropertyImageListRelationFilter = {
-  every?: Prisma.PropertyImageWhereInput
-  some?: Prisma.PropertyImageWhereInput
-  none?: Prisma.PropertyImageWhereInput
-}
-
-export type PropertyImageOrderByRelationAggregateInput = {
-  _count?: Prisma.SortOrder
 }
 
 export type PropertyImageCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   url?: Prisma.SortOrder
-  propertyId?: Prisma.SortOrder
 }
 
 export type PropertyImageMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   url?: Prisma.SortOrder
-  propertyId?: Prisma.SortOrder
 }
 
 export type PropertyImageMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   url?: Prisma.SortOrder
-  propertyId?: Prisma.SortOrder
-}
-
-export type PropertyImageCreateNestedManyWithoutPropertyInput = {
-  create?: Prisma.XOR<Prisma.PropertyImageCreateWithoutPropertyInput, Prisma.PropertyImageUncheckedCreateWithoutPropertyInput> | Prisma.PropertyImageCreateWithoutPropertyInput[] | Prisma.PropertyImageUncheckedCreateWithoutPropertyInput[]
-  connectOrCreate?: Prisma.PropertyImageCreateOrConnectWithoutPropertyInput | Prisma.PropertyImageCreateOrConnectWithoutPropertyInput[]
-  createMany?: Prisma.PropertyImageCreateManyPropertyInputEnvelope
-  connect?: Prisma.PropertyImageWhereUniqueInput | Prisma.PropertyImageWhereUniqueInput[]
-}
-
-export type PropertyImageUncheckedCreateNestedManyWithoutPropertyInput = {
-  create?: Prisma.XOR<Prisma.PropertyImageCreateWithoutPropertyInput, Prisma.PropertyImageUncheckedCreateWithoutPropertyInput> | Prisma.PropertyImageCreateWithoutPropertyInput[] | Prisma.PropertyImageUncheckedCreateWithoutPropertyInput[]
-  connectOrCreate?: Prisma.PropertyImageCreateOrConnectWithoutPropertyInput | Prisma.PropertyImageCreateOrConnectWithoutPropertyInput[]
-  createMany?: Prisma.PropertyImageCreateManyPropertyInputEnvelope
-  connect?: Prisma.PropertyImageWhereUniqueInput | Prisma.PropertyImageWhereUniqueInput[]
-}
-
-export type PropertyImageUpdateManyWithoutPropertyNestedInput = {
-  create?: Prisma.XOR<Prisma.PropertyImageCreateWithoutPropertyInput, Prisma.PropertyImageUncheckedCreateWithoutPropertyInput> | Prisma.PropertyImageCreateWithoutPropertyInput[] | Prisma.PropertyImageUncheckedCreateWithoutPropertyInput[]
-  connectOrCreate?: Prisma.PropertyImageCreateOrConnectWithoutPropertyInput | Prisma.PropertyImageCreateOrConnectWithoutPropertyInput[]
-  upsert?: Prisma.PropertyImageUpsertWithWhereUniqueWithoutPropertyInput | Prisma.PropertyImageUpsertWithWhereUniqueWithoutPropertyInput[]
-  createMany?: Prisma.PropertyImageCreateManyPropertyInputEnvelope
-  set?: Prisma.PropertyImageWhereUniqueInput | Prisma.PropertyImageWhereUniqueInput[]
-  disconnect?: Prisma.PropertyImageWhereUniqueInput | Prisma.PropertyImageWhereUniqueInput[]
-  delete?: Prisma.PropertyImageWhereUniqueInput | Prisma.PropertyImageWhereUniqueInput[]
-  connect?: Prisma.PropertyImageWhereUniqueInput | Prisma.PropertyImageWhereUniqueInput[]
-  update?: Prisma.PropertyImageUpdateWithWhereUniqueWithoutPropertyInput | Prisma.PropertyImageUpdateWithWhereUniqueWithoutPropertyInput[]
-  updateMany?: Prisma.PropertyImageUpdateManyWithWhereWithoutPropertyInput | Prisma.PropertyImageUpdateManyWithWhereWithoutPropertyInput[]
-  deleteMany?: Prisma.PropertyImageScalarWhereInput | Prisma.PropertyImageScalarWhereInput[]
-}
-
-export type PropertyImageUncheckedUpdateManyWithoutPropertyNestedInput = {
-  create?: Prisma.XOR<Prisma.PropertyImageCreateWithoutPropertyInput, Prisma.PropertyImageUncheckedCreateWithoutPropertyInput> | Prisma.PropertyImageCreateWithoutPropertyInput[] | Prisma.PropertyImageUncheckedCreateWithoutPropertyInput[]
-  connectOrCreate?: Prisma.PropertyImageCreateOrConnectWithoutPropertyInput | Prisma.PropertyImageCreateOrConnectWithoutPropertyInput[]
-  upsert?: Prisma.PropertyImageUpsertWithWhereUniqueWithoutPropertyInput | Prisma.PropertyImageUpsertWithWhereUniqueWithoutPropertyInput[]
-  createMany?: Prisma.PropertyImageCreateManyPropertyInputEnvelope
-  set?: Prisma.PropertyImageWhereUniqueInput | Prisma.PropertyImageWhereUniqueInput[]
-  disconnect?: Prisma.PropertyImageWhereUniqueInput | Prisma.PropertyImageWhereUniqueInput[]
-  delete?: Prisma.PropertyImageWhereUniqueInput | Prisma.PropertyImageWhereUniqueInput[]
-  connect?: Prisma.PropertyImageWhereUniqueInput | Prisma.PropertyImageWhereUniqueInput[]
-  update?: Prisma.PropertyImageUpdateWithWhereUniqueWithoutPropertyInput | Prisma.PropertyImageUpdateWithWhereUniqueWithoutPropertyInput[]
-  updateMany?: Prisma.PropertyImageUpdateManyWithWhereWithoutPropertyInput | Prisma.PropertyImageUpdateManyWithWhereWithoutPropertyInput[]
-  deleteMany?: Prisma.PropertyImageScalarWhereInput | Prisma.PropertyImageScalarWhereInput[]
-}
-
-export type PropertyImageCreateWithoutPropertyInput = {
-  id?: string
-  url: string
-}
-
-export type PropertyImageUncheckedCreateWithoutPropertyInput = {
-  id?: string
-  url: string
-}
-
-export type PropertyImageCreateOrConnectWithoutPropertyInput = {
-  where: Prisma.PropertyImageWhereUniqueInput
-  create: Prisma.XOR<Prisma.PropertyImageCreateWithoutPropertyInput, Prisma.PropertyImageUncheckedCreateWithoutPropertyInput>
-}
-
-export type PropertyImageCreateManyPropertyInputEnvelope = {
-  data: Prisma.PropertyImageCreateManyPropertyInput | Prisma.PropertyImageCreateManyPropertyInput[]
-  skipDuplicates?: boolean
-}
-
-export type PropertyImageUpsertWithWhereUniqueWithoutPropertyInput = {
-  where: Prisma.PropertyImageWhereUniqueInput
-  update: Prisma.XOR<Prisma.PropertyImageUpdateWithoutPropertyInput, Prisma.PropertyImageUncheckedUpdateWithoutPropertyInput>
-  create: Prisma.XOR<Prisma.PropertyImageCreateWithoutPropertyInput, Prisma.PropertyImageUncheckedCreateWithoutPropertyInput>
-}
-
-export type PropertyImageUpdateWithWhereUniqueWithoutPropertyInput = {
-  where: Prisma.PropertyImageWhereUniqueInput
-  data: Prisma.XOR<Prisma.PropertyImageUpdateWithoutPropertyInput, Prisma.PropertyImageUncheckedUpdateWithoutPropertyInput>
-}
-
-export type PropertyImageUpdateManyWithWhereWithoutPropertyInput = {
-  where: Prisma.PropertyImageScalarWhereInput
-  data: Prisma.XOR<Prisma.PropertyImageUpdateManyMutationInput, Prisma.PropertyImageUncheckedUpdateManyWithoutPropertyInput>
-}
-
-export type PropertyImageScalarWhereInput = {
-  AND?: Prisma.PropertyImageScalarWhereInput | Prisma.PropertyImageScalarWhereInput[]
-  OR?: Prisma.PropertyImageScalarWhereInput[]
-  NOT?: Prisma.PropertyImageScalarWhereInput | Prisma.PropertyImageScalarWhereInput[]
-  id?: Prisma.StringFilter<"PropertyImage"> | string
-  url?: Prisma.StringFilter<"PropertyImage"> | string
-  propertyId?: Prisma.StringFilter<"PropertyImage"> | string
-}
-
-export type PropertyImageCreateManyPropertyInput = {
-  id?: string
-  url: string
-}
-
-export type PropertyImageUpdateWithoutPropertyInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  url?: Prisma.StringFieldUpdateOperationsInput | string
-}
-
-export type PropertyImageUncheckedUpdateWithoutPropertyInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  url?: Prisma.StringFieldUpdateOperationsInput | string
-}
-
-export type PropertyImageUncheckedUpdateManyWithoutPropertyInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  url?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -385,50 +244,31 @@ export type PropertyImageUncheckedUpdateManyWithoutPropertyInput = {
 export type PropertyImageSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   url?: boolean
-  propertyId?: boolean
-  property?: boolean | Prisma.PropertyDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["propertyImage"]>
 
 export type PropertyImageSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   url?: boolean
-  propertyId?: boolean
-  property?: boolean | Prisma.PropertyDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["propertyImage"]>
 
 export type PropertyImageSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   url?: boolean
-  propertyId?: boolean
-  property?: boolean | Prisma.PropertyDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["propertyImage"]>
 
 export type PropertyImageSelectScalar = {
   id?: boolean
   url?: boolean
-  propertyId?: boolean
 }
 
-export type PropertyImageOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "url" | "propertyId", ExtArgs["result"]["propertyImage"]>
-export type PropertyImageInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  property?: boolean | Prisma.PropertyDefaultArgs<ExtArgs>
-}
-export type PropertyImageIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  property?: boolean | Prisma.PropertyDefaultArgs<ExtArgs>
-}
-export type PropertyImageIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  property?: boolean | Prisma.PropertyDefaultArgs<ExtArgs>
-}
+export type PropertyImageOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "url", ExtArgs["result"]["propertyImage"]>
 
 export type $PropertyImagePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "PropertyImage"
-  objects: {
-    property: Prisma.$PropertyPayload<ExtArgs>
-  }
+  objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     url: string
-    propertyId: string
   }, ExtArgs["result"]["propertyImage"]>
   composites: {}
 }
@@ -823,7 +663,6 @@ readonly fields: PropertyImageFieldRefs;
  */
 export interface Prisma__PropertyImageClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  property<T extends Prisma.PropertyDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PropertyDefaultArgs<ExtArgs>>): Prisma.Prisma__PropertyClient<runtime.Types.Result.GetResult<Prisma.$PropertyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -855,7 +694,6 @@ export interface Prisma__PropertyImageClient<T, Null = never, ExtArgs extends ru
 export interface PropertyImageFieldRefs {
   readonly id: Prisma.FieldRef<"PropertyImage", 'String'>
   readonly url: Prisma.FieldRef<"PropertyImage", 'String'>
-  readonly propertyId: Prisma.FieldRef<"PropertyImage", 'String'>
 }
     
 
@@ -872,10 +710,6 @@ export type PropertyImageFindUniqueArgs<ExtArgs extends runtime.Types.Extensions
    * Omit specific fields from the PropertyImage
    */
   omit?: Prisma.PropertyImageOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
   /**
    * Filter, which PropertyImage to fetch.
    */
@@ -895,10 +729,6 @@ export type PropertyImageFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Ext
    */
   omit?: Prisma.PropertyImageOmit<ExtArgs> | null
   /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
-  /**
    * Filter, which PropertyImage to fetch.
    */
   where: Prisma.PropertyImageWhereUniqueInput
@@ -916,10 +746,6 @@ export type PropertyImageFindFirstArgs<ExtArgs extends runtime.Types.Extensions.
    * Omit specific fields from the PropertyImage
    */
   omit?: Prisma.PropertyImageOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
   /**
    * Filter, which PropertyImage to fetch.
    */
@@ -969,10 +795,6 @@ export type PropertyImageFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Exte
    */
   omit?: Prisma.PropertyImageOmit<ExtArgs> | null
   /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
-  /**
    * Filter, which PropertyImage to fetch.
    */
   where?: Prisma.PropertyImageWhereInput
@@ -1021,10 +843,6 @@ export type PropertyImageFindManyArgs<ExtArgs extends runtime.Types.Extensions.I
    */
   omit?: Prisma.PropertyImageOmit<ExtArgs> | null
   /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
-  /**
    * Filter, which PropertyImages to fetch.
    */
   where?: Prisma.PropertyImageWhereInput
@@ -1068,10 +886,6 @@ export type PropertyImageCreateArgs<ExtArgs extends runtime.Types.Extensions.Int
    */
   omit?: Prisma.PropertyImageOmit<ExtArgs> | null
   /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
-  /**
    * The data needed to create a PropertyImage.
    */
   data: Prisma.XOR<Prisma.PropertyImageCreateInput, Prisma.PropertyImageUncheckedCreateInput>
@@ -1105,10 +919,6 @@ export type PropertyImageCreateManyAndReturnArgs<ExtArgs extends runtime.Types.E
    */
   data: Prisma.PropertyImageCreateManyInput | Prisma.PropertyImageCreateManyInput[]
   skipDuplicates?: boolean
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -1123,10 +933,6 @@ export type PropertyImageUpdateArgs<ExtArgs extends runtime.Types.Extensions.Int
    * Omit specific fields from the PropertyImage
    */
   omit?: Prisma.PropertyImageOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
   /**
    * The data needed to update a PropertyImage.
    */
@@ -1179,10 +985,6 @@ export type PropertyImageUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.E
    * Limit how many PropertyImages to update.
    */
   limit?: number
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -1197,10 +999,6 @@ export type PropertyImageUpsertArgs<ExtArgs extends runtime.Types.Extensions.Int
    * Omit specific fields from the PropertyImage
    */
   omit?: Prisma.PropertyImageOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
   /**
    * The filter to search for the PropertyImage to update in case it exists.
    */
@@ -1227,10 +1025,6 @@ export type PropertyImageDeleteArgs<ExtArgs extends runtime.Types.Extensions.Int
    * Omit specific fields from the PropertyImage
    */
   omit?: Prisma.PropertyImageOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
   /**
    * Filter which PropertyImage to delete.
    */
@@ -1263,8 +1057,4 @@ export type PropertyImageDefaultArgs<ExtArgs extends runtime.Types.Extensions.In
    * Omit specific fields from the PropertyImage
    */
   omit?: Prisma.PropertyImageOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PropertyImageInclude<ExtArgs> | null
 }

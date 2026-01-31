@@ -94,6 +94,10 @@ export const PropertyScalarFieldEnum = {
   description: 'description',
   price: 'price',
   thumbNailImage: 'thumbNailImage',
+  propertyImages1: 'propertyImages1',
+  propertyImages2: 'propertyImages2',
+  propertyImages3: 'propertyImages3',
+  propertyImages4: 'propertyImages4',
   type: 'type',
   propertyFor: 'propertyFor',
   bedrooms: 'bedrooms',
@@ -115,8 +119,7 @@ export type PropertyScalarFieldEnum = (typeof PropertyScalarFieldEnum)[keyof typ
 
 export const PropertyImageScalarFieldEnum = {
   id: 'id',
-  url: 'url',
-  propertyId: 'propertyId'
+  url: 'url'
 } as const
 
 export type PropertyImageScalarFieldEnum = (typeof PropertyImageScalarFieldEnum)[keyof typeof PropertyImageScalarFieldEnum]
